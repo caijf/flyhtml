@@ -1,0 +1,43 @@
+<form class="panel-form">
+	<div class="input-group">
+		<span class="input-group-addon"><i class="icon-search"></i></span>
+	  <input type="text" class="form-control js-search" placeholder="Search topics" name="search">
+	</div>
+</form>
+<div class="panel">
+  <div class="panel-heading">Hot Topics</div>
+	<div class="panel-list">
+		<% _.each(topics, function(item, index) { %>
+		<a class="media-body" href="/topics/<%= item.id %>" data-ajax>
+			<span class="label label-success pull-right"><%= index + 1 %></span>
+			<%- item.title %>
+		</a>
+		<% }); %>
+	</div>
+</div>
+<div class="panel">
+  <div class="panel-heading">Active user</div>
+  <div class="panel-list">
+	  <% _.each(users, function(item, index) { %>
+		<a class="list-user-item" href="/users/<%= item.username %>" data-ajax>
+			<div class="media">
+				<div class="pull-left">
+					<img src="<%= item.avatar %>?s=50" alt="<%= item.username %>" class="media-object" style="width: 30px;">
+				</div>
+				<div class="media-body active-user-body">
+					<span class="list-group-item-heading">
+						<span class="label label-success pull-right"><%= index + 1 %></span>
+						<%= item.username %>
+					</span>
+					<p class="text-muted list-group-item-text">
+						<% if(item.aboutMe) { %>
+						<%= item.aboutMe %>
+						<% } else { %>
+						<%= item.username %> hasn't entered anything in the About Me field
+						<% } %>
+				</div>
+			</div>
+		</a>
+		<% }); %>
+	</div>
+</div>

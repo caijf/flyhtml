@@ -1,0 +1,1 @@
+define(["backbone","model/TopicModel"],function(e,t){var n=e.Collection.extend({url:"/pjax/topics",initialize:function(){},parse:function(e,t){return this.total=e.count,e.topics}});return n});

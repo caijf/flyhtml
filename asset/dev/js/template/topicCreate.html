@@ -1,0 +1,64 @@
+
+<div class="col-lg-9 content">
+	<form method="post">
+		<legend>Create a new topic</legend>
+		<div class="form-group">
+			<label class="control-label" for="inputEmail">title</label>
+			<input type="text" name="title" placeholder="title" class="form-control js-title" maxlength="100">
+			<p class="help-block">Title length must be between 10 and 100</p>
+		</div>
+		<div class="form-group">
+			<label>content</label>
+			<ul class="nav nav-tabs">
+				<li class="active js-write">
+					<a href="javascript:void(0)">Write</a>
+				<li class="js-preview">
+					<a href="javascript:void(0)">Preview</a>
+			</ul>
+			<br>
+			<textarea name="content" rows="15" class="form-control js-content"></textarea>
+			<div class="markdown-body js-preview-content">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-success" disabled>Submit</button>
+	</form>
+</div>
+<div class="col-lg-3 aside">
+	<div class="panel">
+		<h4 class="panel-heading">
+			<a href="http://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>
+		</h4>
+		<ul class="list-unstyled">
+			<li>
+				<strong>Headers</strong>
+				<pre>
+# h1
+## h2</pre>
+			<li>
+				<strong>Unordered list</strong>
+				<pre>
+* list1
+* list2</pre>
+			<li>
+				<strong>Ordered list</strong>
+				<pre>
+1. list1
+1. list2</pre>
+			<li>
+				<strong>Code</strong>
+								<pre>//Indent by 4 spaces
+    .css {
+
+    }</pre>
+    	<li>
+				<strong>hr</strong>
+				<pre>
+---
+</pre>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Markdown" target="_blank">
+					<i class="icon-external-link"></i> Markdown Detail
+				</a>		
+		</ul>
+	</div>
+</div>

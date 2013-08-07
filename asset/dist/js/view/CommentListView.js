@@ -1,0 +1,1 @@
+define(["backbone","model/session","text!template/comment.html"],function(e,t,n){return CommentListView});

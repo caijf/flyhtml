@@ -1,0 +1,1 @@
+define(["backbone"],function(e,t){var n=e.Collection.extend({url:"/pjax/users",initialize:function(){},parse:function(e,t){return this.total=e.count,e.users}});return n});

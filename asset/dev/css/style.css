@@ -1,0 +1,184 @@
+/* layout */
+#main {
+	min-height: 600px;
+}
+
+
+.list-group-item-hover:hover {
+	background: #F5F5F5;
+}
+.topic-item-link {
+	color: #333;
+}
+.topic-item-link:hover,
+.topic-item-link:focus {
+	text-decoration: none;
+	color: #333;
+	outline: none;
+}
+.topic-item-icon {
+	margin-left: 10px;
+}
+
+.footer {
+	border-top: 1px solid #e5e5e5;
+	padding: 20px 0 30px;
+	margin-top: 20px;
+}
+
+
+.panel-list a {
+	display: block;
+	padding: 10px 0 8px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.panel-list a:first-child {
+	border-top: none;
+	padding-top: 0;
+}
+
+.panel-list-rank {
+	float: right;
+}
+
+.panel-form {
+	margin-bottom: 20px;
+}
+
+.list-user-item {
+	color: #333;
+}
+.list-user-item:hover {
+	text-decoration: none;
+}
+
+/* Topic detail */
+.topic-icon {
+	display: inline-block;
+	width: 25px;
+	font-size: 18px;
+}
+.topic-action {
+	cursor: pointer;
+
+}
+/* User detail */
+.user-detail-media > .pull-left {
+	margin-right: 20px;
+	text-align: center;
+}
+
+/* Comment */
+.comments-list {
+	margin-bottom: 20px;
+}
+.comment {
+	border-bottom: 1px dashed #e5e5e5;
+	padding-bottom: 15px;
+}
+.comment-actions i {
+	color: #999;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* Component */
+.gutter {
+	margin: 0 10px;
+}
+.muted-link {
+	color: #999;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.muted-link:hover {
+	color: #666;
+	text-decoration: underline;
+}
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Cover bootstrap
+-------------------------------------------------- */
+
+.content .pagination {
+	margin: 0;
+}
+
+
+/* Custom navbar
+-------------------------------------------------- */
+body {
+	padding-top: 60px;
+}
+h2 {
+	margin-top: 10px;
+}
+.navbar {
+	font-size: 16px;
+}
+.navbar-inverse {
+	background-color: #563D7C;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+	color: #CDBFE3;
+}
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #463265;
+	color: #fff;
+}
+
+.list-inline > li {
+	vertical-align: top;
+}
+
+.media-body {
+	display: block;
+}
+
+.media-body textarea {
+	max-width: 100%;
+}
+
+.nav-tabs .badge {
+	margin-left: 10px;
+}
+
+.modal-footer {
+	margin-top: 5px;
+}
+.modal-signup {
+	width: 640px;
+	margin-left: -320px;
+}
+.modal-signup .form-control {
+	display: inline-block;
+	width: 50%;
+}
+
+/* Msg alert */
+
+.msg-alert {
+	position: fixed;
+	z-index: 1031;
+	text-align: center;
+	top: 80px;
+	left: 0;
+	right: 0;
+}
+.msg-alert .label {
+	font-size: 16px;
+	padding: 8px 15px;
+}
+.msg-alert i {
+	margin-right: 10px;
+}

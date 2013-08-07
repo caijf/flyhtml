@@ -1,0 +1,26 @@
+<script id="user-item-template" type="text/template">
+	<div class="media">
+		<div title="<%= username %>" data-ajax class="pull-left">
+			<img src="<%= avatar %>?s=50" alt="<%= username %>" class="media-object" width="50" height="50">
+		</div>
+		<div class="pull-right">
+			<span class="label label-info"><%= rank %></span>
+		</div>
+		<div class="media-body">
+			<h4 class="list-group-item-heading"><%= username %></h4>
+			<p class="list-group-item-text">
+				<% aboutMe ? print(aboutMe) : print('Have no info about me'); %>
+			<p class="text-muted" style="margin-bottom: 0;">
+				<i class="icon-smile"></i> <%= topicCount %> topics
+				<i class="icon-comments"></i> <%= commentCount %> comments
+				<i class="icon-heart"></i> <%= likeCount %> likes
+		</div>
+	</div>
+</script>
+<script id="layout-template" type="text/template">
+	<div class="col-lg-8 content">
+		<div class="list-group users">
+		</div>
+	</div>
+	<div class="col-lg-4 aside"></div>
+</script>

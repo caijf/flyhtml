@@ -1,0 +1,37 @@
+<a class="navbar-brand" href="/">Flyhtml</a>
+<ul class="nav navbar-nav js-nav-primary">
+	<li class="js-topics-link">
+		<a href="/topics" data-ajax>
+			<i class="icon-home icon-large"></i>Topics
+		</a>
+	<li class="js-users-link">
+		<a href="/users" data-ajax>
+			<i class="icon-group icon-large"></i>Members
+		</a>
+</ul>
+
+<ul class="pull-right nav navbar-nav">
+	<% if (user.username) { %>
+	<li>
+		<a href="/topics/create" data-ajax>
+			<i class="icon-plus"></i> Create
+		</a>
+	<li>
+		<a href="/user/<%= user.username %>" data-ajax>
+			<i class="icon-user"></i> <%= user.username %>
+		</a>
+	<li>
+		<a href="javascript:void(0)" class="color-transition js-logout">
+			<i class="icon-signout"></i> Logout
+		</a>
+	<% } else { %>
+	<li>
+		<a href="javascript:void(0)" class="js-login">
+				<i class="icon-plus"></i> Create Topics
+		</a>
+	<li>
+		<a href="javascript:void(0)" class="js-login">Login</a>
+	<li>
+		<a href="javascript:void(0)" class="js-signup">Signup</a>
+	<% } %>
+</ul>

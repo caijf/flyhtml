@@ -1,0 +1,29 @@
+<div class="list-group-item list-group-item-hover">
+	<div class="media">
+		<a title="<%= user.username %>" href="/users/<%= user.username %>" data-ajax class="pull-left js-user">
+			<img src="<%= user.avatar %>?s=50" alt="<%= user.username %>" class="media-object" width="50" height="50">
+		</a>
+		<a class="media-body topic-item-link" href="/topics/<%= id %>" data-ajax>
+			<h4 class="list-group-item-heading"><%- title %></h4>
+			<div class="text-muted topic-follow">
+				<span class="topic-view"><%= views %> views</span>
+				<% if(votes) { %>
+				<span class="topic-like" title="votes">
+					<i class="icon-thumbs-up"></i><%= votes %> vote<% if(votes > 1) { print('s'); }%>
+				</span>
+				<% } %>
+				<% if(likes) { %>
+				<span class="topic-like" title="likes">
+					<i class="icon-heart"></i><%= likes %> like<% if(likes > 1) { print('s'); }%>
+				</span>
+				<% } %>
+				<% if(comments) { %>
+				<span title="comments">
+					<i class="icon-comments"></i><%= comments %> comment<% if(comments > 1) { print('s'); }%>
+				</span>
+				<% } %><br>
+				by <%= user.username %> about <%= createAt %>
+			</div>
+		</a>
+	</div>
+</div>

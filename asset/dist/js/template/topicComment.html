@@ -1,0 +1,27 @@
+<a class="pull-left" href="/user/<%= comment.user.username %>">
+	<img class="media-object" src="<%= comment.user.avatar %>?s=50" alt="<%= user.username %>" width="50">
+</a>
+<div class="media-body">
+	<div>
+		<a href="/user/<%= comment.user.username %>"><%= comment.user.username %></a>
+		<small class="muted gutter"><%= comment.createAt %></small>
+	</div>
+	<p><%= comment.body %></p>
+	<div class="comemnt-action">
+		<a class="js-reply" href="javascript:void(0)" title="Click toggle reply panel">Reply</a>
+		<% if (comment.isRemove) { %>
+		<a class="js-remove" href="javascript:void(0)">Remove</a>
+		<% } %>
+	</div>
+	<% if(user.username) { %>
+	<div class="hide media reply-form">
+		<a class="pull-left" href="/user/<%= user.username %>">
+			<img class="media-object" src="<%= user.avatar %>?s=50" alt="<%= user.username %>" width="50">
+		</a>
+		<div class="media-body">
+			<textarea class="input-block-level" name="comment-other" rows="4"></textarea>
+			<button class="btn btn-success pull-right js-comment-other">comment</button>
+		</div>
+	</div>
+	<% } %>
+</div>

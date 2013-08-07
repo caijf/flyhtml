@@ -1,0 +1,30 @@
+{
+  "name": "flyhtml",
+  "version": "0.0.0",
+  "description": "node demo",
+  "main": "app.js",
+  "scripts": {
+    
+  },
+  "repository": "",
+  "keywords": [
+    "node",
+    "express",
+    "mongoose",
+    "nodeJs",
+    "backbone",
+    "requirejs"
+  ],
+  "author": "nothing <madhums8@gmail.com> (http://madhums.github.com)",
+  "license": "BSD",
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "mongoose": "lastest",
+    "connect-mongo": "lastest"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-requirejs": "*"
+  }
+}

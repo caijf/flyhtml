@@ -1,0 +1,43 @@
+<div class="col-lg-9 content">
+	<div class="media user-detail-media">
+		<div class="pull-left">
+			<p>
+				<img src="<%= avatar %>">
+			<p>
+				<a href="/users/<%= username %>/settings">Edit profile</a>
+		</div>
+		<div class="media-body">
+			<h2 class="media-heading"><%= username %></h2>
+			<p>about me
+			<p>
+				<%= score %> score
+			<p>
+				website:<a href="">www.flyhtml.com</a>
+			<p>
+				Join at <%= createAt %>
+		</div>
+	</div>
+	<hr>
+	<ul class="nav nav-pills">
+  	<li class="js-topics">
+  		<a href="/users/<%= username %>" data-ajax>
+  			Topics
+  			<span class="badge"><%= topicCount %></span>
+  		</a>
+		<li class="js-likes">
+			<a href="/users/<%= username %>/likes" data-ajax>
+				Likes
+				<span class="badge"><%= likeCount %></span>
+			</a>
+		<li class="js-comments">
+			<a href="/users/<%= username %>/comments" data-ajax>
+				Comments
+				<span class="badge"><%= commentCount %></span>
+			</a>
+		<li class="disabled">
+			<a>Message</a>
+	</ul>
+	<hr>
+	<div class="topics">
+	</div>
+</div>

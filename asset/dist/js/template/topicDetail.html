@@ -1,0 +1,107 @@
+<script type="text/template" id="body-template">
+	<a class="js-back" href="javascript:void(0)">
+		<i class="icon-long-arrow-left" title="Back to topics" style="margin: 0;"></i> Back to topics
+	</a>
+	<h2><%= title %></h2>
+	<hr>
+	<%= body %>
+	<br>
+	<span class="text-success">Post at <%= createAt %></span>
+	<hr>
+</script>
+<script type="text/template" id="side-template">
+	<div class="media">
+		<a class="pull-left" href="/users/<%= user.username %>" data-ajax>
+			<img class="media-object" src="<%= user.avatar %>" alt="<%= user.username %>" width="80" height="80">
+		</a>
+		<div class="media-body">
+			<h4 class="media-heading">
+				<a href="/users/<%= user.username %>" data-ajax><%= user.username %></a>
+			</h4>
+			<div class="muted">
+				<strong><%= user.topicCount %></strong> Topics<br>
+				<strong><%= user.likeCount %></strong> Likes<br>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<ul class="text-muted list-group">
+    <li class="list-group-item">
+      <span class="badge"><%= views %></span>
+      <i class="topic-icon icon-info-sign"></i>VIEWS
+    </li>
+     <li class="list-group-item">
+      <span class="badge"><%= comments.length %></span>
+      <i class="topic-icon icon-comments"></i>COMMENTS
+    </li>
+    <li class="list-group-item">
+      <span class="badge"><%= votes %></span>
+      <% if(isVote) { %>
+      <span class="unselectable topic-action js-vote" title="Remove vote from this topic">
+      	<i class="topic-icon icon-caret-down text-info"></i>VOTES
+      </span>
+      <% } else { %>
+      <span class="unselectable topic-action js-vote" title="Vote this topic">
+      	<i class="topic-icon icon-caret-up"></i>VOTES
+      </span>
+      <% } %>
+    </li>
+    <li class="list-group-item">
+      <span class="badge"><%= likes %></span>
+	    <% if(isLike) { %>
+    	<span class="unselectable topic-action js-like" title="Remove this topic from your favorites list">
+			<i class="topic-icon icon-star text-info"></i>LIKES
+			<% } else { %>
+			<span class="unselectable topic-action js-like" title="Add this topic to your favorites list">
+			<i class="topic-icon icon-star-empty"></i>LIKES
+			</span>
+			<% } %>
+    </li>
+  </ul>
+</script>
+<script type="text/template" id="comment-template">
+	<a class="pull-left" href="/user/<%= user.username %>">
+		<img class="media-object" src="<%= user.avatar %>?s=50" alt="<%= user.username %>" width="50" height="50">
+	</a>
+	<div class="pull-right comment-actions">
+		<i class="icon-reply js-reply"></i>
+	</div>
+	<div class="media-body">
+		<div class="media-heading">
+			<a href="/user/<%= user.username %>"><%= user.username %></a>
+			<small class="text-muted gutter"><%= createAt %></small>
+			<% if(isDelete) { %>
+			<small class="comment-delete js-delete">Delete</small>
+			<% } %>
+		</div>
+		<p><%- body %></p>
+	</div>
+</script>
+<script type="text/template" id="comment-form-template">
+	<div class="media reply-form">
+		<a class="pull-left" href="/user/<%= username %>">
+			<img class="media-object" src="<%= avatar %>?s=50" alt="<%= username %>" width="50" height="50">
+		</a>
+		<div class="media-body">
+			<textarea class="form-control js-comment-text" name="comment-text" rows="4"></textarea>
+			<br>
+			<button class="btn btn-success pull-right js-comment">comment</button>
+		</div>
+	</div>	
+</script>
+<script type="text/template" id="alert-login-template">
+	<div class="alert">
+		You must <a href="javascript:void(0)" class="js-login">login</a> before comment.
+	</div>
+</script>
+<script id="layout-template" type="text/template">
+	<div class="col-lg-9 content">
+		 <div class="topic-body">
+		 </div>
+		 <div class="comments">
+		 	<div class="comments-list">
+		 	</div>
+		 </div>
+	</div>
+	<div class="col-lg-3 aside"></div>
+</script>
