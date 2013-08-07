@@ -1,6 +1,5 @@
 var User = require('../model').User;
 var Topic = require('../model').Topic;
-var async = require('async');
 
 exports.login = function(req, res) {
 	User.findOne({

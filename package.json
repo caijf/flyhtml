@@ -18,13 +18,13 @@
   "author": "nothing <madhums8@gmail.com> (http://madhums.github.com)",
   "license": "BSD",
   "dependencies": {
-    "express": "*",
-    "ejs": "*",
-    "mongoose": "lastest",
-    "connect-mongo": "lastest"
+    "express": "latest",
+    "ejs": "latest",
+    "mongoose": "latest",
+    "connect-mongo": "latest"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-requirejs": "*"
+    "grunt": "latest",
+    "grunt-contrib-requirejs": "latest"
   }
 }
