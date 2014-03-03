@@ -1,30 +1,39 @@
 {
   "name": "flyhtml",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "node demo",
   "main": "app.js",
   "scripts": {
     
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sexnothing/flyhtml"
+  },
   "keywords": [
     "node",
     "express",
     "mongoose",
     "nodeJs",
-    "backbone",
-    "requirejs"
+    "AngularJS",
+    "Bootstrap"
   ],
   "author": "nothing <sexnothing@gmail.com> (https://github.com/sexnothing)",
   "license": "BSD",
   "dependencies": {
-    "express": "latest",
-    "ejs": "latest",
-    "mongoose": "latest",
-    "connect-mongo": "latest"
+    "express": "~3.0.0",
+    "mongoose": "~3.8.8",
+    "connect-mongo": "~0.4.0"
   },
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-contrib-requirejs": "latest"
+    "grunt": "~0.4.2",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.8.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.3.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-develop": "~0.3.0",
+    "load-grunt-tasks": "~0.3.0"
   }
 }
