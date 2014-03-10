@@ -6,7 +6,10 @@
   "scripts": {
     
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sexnothing/flyhtml"
+  },
   "keywords": [
     "node",
     "express",
