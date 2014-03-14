@@ -28,7 +28,7 @@ app.configure(function() {
 });
 
 app.configure('development', function(){
-  app.use(express.static(__dirname + '/asset/dev'));
+  app.use(express.static(__dirname + '/asset/dev', { maxAge: 24 * 60 * 60 * 1000 }));
   app.set('views', path.join(__dirname, 'app/view/dev'));
 });
 

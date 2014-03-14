@@ -17,6 +17,7 @@ define([
 		},
 		auth: function(e) {
 			e.preventDefault();
+
 			session.login({
 				username: this.getInputVal('username'),
 				password: this.getInputVal('password'),

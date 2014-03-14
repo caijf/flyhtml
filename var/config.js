@@ -8,7 +8,9 @@ var obj = {
 	development: {
 		db: 'mongodb://localhost/app' 
 	},
-	production: { }
+	production: {
+    db: 'postgres://cdviqihbbqdnaa:jblB5ChLYlr_yAWDK6YXKn38K2@ec2-23-21-170-57.compute-1.amazonaws.com:5432/d5uff0l769dsum'
+  }
 }
 for(var i in common) {
 	obj.development[i] = common[i];
