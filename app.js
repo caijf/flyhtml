@@ -28,13 +28,13 @@ app.configure(function() {
 });
 
 app.configure('development', function(){
-  app.use(express.static(__dirname + '/asset/dev', { maxAge: 24 * 60 * 60 * 1000 }));
+  app.use(express.static(__dirname + '/asset/dev'));
   app.set('views', path.join(__dirname, 'app/view/dev'));
 });
 
 app.configure('production', function(){
-  app.use(express.static(__dirname + '/asset/dist', { maxAge: 24 * 60 * 60 * 1000 }));
-  app.set('views', path.join(__dirname, 'app/view/dist'));
+  app.use(express.static(__dirname + '/asset/dev', { maxAge: 24 * 60 * 60 * 1000 }));
+  app.set('views', path.join(__dirname, 'app/view/dev'));
 });
 
 // assume 404 since no middleware responded

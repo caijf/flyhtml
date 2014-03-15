@@ -9,7 +9,8 @@ var obj = {
 		db: 'mongodb://localhost/app' 
 	},
 	production: {
-    db: 'postgres://cdviqihbbqdnaa:jblB5ChLYlr_yAWDK6YXKn38K2@ec2-23-21-170-57.compute-1.amazonaws.com:5432/d5uff0l769dsum'
+		//mongodb://username:password@host:port/database?options...
+    db: 'mongodb://nothing:nothing@oceanic.mongohq.com:10029/flyhtml'
   }
 }
 for(var i in common) {

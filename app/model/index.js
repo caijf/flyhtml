@@ -1,13 +1,21 @@
 var mongoose = require('mongoose');
 var config = require('../../var/config');
 
-mongoose.set('debug', true);
+function connectCb(err) {
+  if (err) {
+    console.error('%s db connect error', config.db);
+  }
+}
+
+//mongoose.set('debug', true);
 // bootstrap db
-mongoose.connect(config.db, function(err) {
-	if (err) {
-		console.error('%s db connect error', config.db);
-	}
-});
+
+
+if (config.dbOpts) {
+  mongoose.connect(config.db, config.dbOpts, connectCb);
+} else {
+  mongoose.connect(config.db, connectCb);
+}
 
 //load model
 require('./user');
