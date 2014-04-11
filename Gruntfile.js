@@ -1,37 +1,71 @@
 module.exports = function(grunt) {
-	grunt.initConfig({
-		requirejs: {
-			compile: {
-		    options: {
-		      baseUrl: "asset/dev/js",
-		      mainConfigFile: "asset/dev/js/main.js",
-		      out: "asset/pro/js",
-		      modules: [],
-		      shim: {
-						underscore: {
-				      exports: '_'
-				    },
-				    backbone: {
-				      //These script dependencies should be loaded before loading
-				      //backbone.js
-				      deps: ['underscore', 'jquery'],
-				      //Once loaded, use the global 'Backbone' as the
-				      exports: 'Backbone'
-				    },
-				    util: ['jquery'],
-				    markdown: {
-				      exports: 'markdown'
-				    }
-		      }
-		    }
-		  }
-		}
-	});
-	// Load the plugin
- // grunt.loadNpmTasks('grunt-jsbeautifier');
-  //grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  //grunt plugins
+  require('load-grunt-tasks')(grunt);
 
-  // Default task(s).
-  grunt.registerTask('default', ['requirejs']);
+  //Project configuration
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    watch: {
+      development: {
+        files: ['app.js', 'app/**/*.js'],
+        tasks: ['develop:development'],
+        options: { nospawn: true }
+      },
+      production: {
+        files: ['app.js', 'app/**/*.js'],
+        tasks: ['develop:production'],
+        options: { nospawn: true }
+      }
+    },
+    develop: {
+      //Auto restart application
+      development: {
+        file: 'app.js',
+        env: { NODE_ENV: 'development' }
+      },
+      production: {
+        file: 'app.js',
+        env: { NODE_ENV: 'production' }
+      }
+    },
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'asset/dev',
+        src: '**',
+        dest: 'asset/dest'
+      }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "asset/dev/js",
+          dir: "asset/dest/js",
+          modules: [
+            {
+              name: 'main'
+            }
+          ],
+          shim: {
+            jquery: {
+              exports: '$'
+            },
+            underscore: {
+              exports: '_'
+            }
+          },
+          paths: {
+            jquery: '../lib/jquery',
+            underscore: '../lib/underscore',
+            backbone: '../lib/backbone',
+            text: '../lib/text',
+            markdown: '../lib/markdown'
+          }
+        }
+      }
+    }   
+  });
+
+  //All tasks
+  grunt.registerTask('build', ['copy', 'requirejs']);
 }

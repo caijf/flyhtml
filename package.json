@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "description": "node demo",
   "main": "app.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/sexnothing/flyhtml"
@@ -20,14 +18,17 @@
   ],
   "author": "nothing <sexnothing@gmail.com> (https://github.com/sexnothing)",
   "license": "BSD",
-  "dependencies": {
-    "express": "~3.0.6",
-    "ejs": "~0.8.5",
-    "mongoose": "~3.8.8",
-    "connect-mongo": "~0.4.0"
-  },
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-contrib-requirejs": "latest"
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-develop": "~0.3.0",
+    "load-grunt-tasks": "~0.3.0",
+    "express": "3.x",
+    "grunt-contrib-requirejs": "~0.4.3",
+    "grunt-contrib-copy": "~0.5.0"
+  },
+  "dependencies": {
+    "mongoose": "~3.8.8"
   }
 }
