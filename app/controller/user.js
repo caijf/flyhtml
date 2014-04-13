@@ -1,27 +1,36 @@
 var User = require('../model').User;
 var Topic = require('../model').Topic;
 
+function d(obj) {
+	console.log(obj);
+}
 exports.login = function(req, res) {
 	User.findOne({
 		username: req.body.username
 	}, function(err, user) {
 		if (err) return res.status(500);
 		if (!user) return res.send({ error: 'Donot find this user' });
+
 		if (user.authPassword(req.body.password)) {
 			req.session.user = user.toJSON();
+			
 			if (req.body.remember) {
-				req.session.cookie.expires = new Date(Date.now() +  1000 * 60 * 60 * 24);
+				req.sessionCookies.set('flyhtml', {
+					expires: new Date(Date.now() + 1000 * 60 * 60 * 24)
+				});
 			} else {
-				req.session.cookie.expires = null;
+				req.sessionCookies.set('flyhtml', {
+					expires: null
+				});
 			}
-			res.send({ success: 'Auth success' });			
+			res.send({ error: 'Auth success' });			
 		} else {
 			res.send({ error: 'Password wrong' });
 		}
 	});
 }
 exports.logout = function(req, res) {
-	req.session.destroy();
+	req.session = null;
 	res.send({});
 }
 

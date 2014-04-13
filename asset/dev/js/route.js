@@ -43,9 +43,11 @@ define([
 			'users/:username': 'user',
 			'users/:username/likes': 'user',
 			'users/:username/comments': 'user',
+			'*path': 'notFound'
 		},
 		initialize: function() {
 			this.topMenuView = new TopMenuView();
+			this.$el = $('#main');
 		},
 		topics: function(page) {
 			util.alert.load();
@@ -88,6 +90,9 @@ define([
 				page: page
 			});
 			this.topMenuView.select('.js-users-link');
+		},
+		notFound: function() {
+			Backbone.history.navigate('', true);
 		}
 	});
 	var route = function() {

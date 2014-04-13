@@ -9,12 +9,12 @@ module.exports = function(grunt) {
       development: {
         files: ['app.js', 'app/**/*.js'],
         tasks: ['develop:development'],
-        options: { nospawn: true }
+        options: { nospawn: false }
       },
       production: {
         files: ['app.js', 'app/**/*.js'],
         tasks: ['develop:production'],
-        options: { nospawn: true }
+        options: { nospawn: false }
       }
     },
     develop: {
@@ -68,4 +68,26 @@ module.exports = function(grunt) {
 
   //All tasks
   grunt.registerTask('build', ['copy', 'requirejs']);
+
+  grunt.registerTask('app', function(env) {
+    var spawn = require('child_process').spawn;
+
+    env = env || 'development';
+    //Start app
+    var start = spawn('node', ['app.js'], {
+      env: env
+    });
+    start.stdout.on('data', function (data) {
+      console.log('stdout: ' + data);
+    });
+    start.stderr.on('data', function (data) {
+      console.log('stderr: ' + data);
+    });
+
+    if (env == 'development') {
+      grunt.task.run(['watch:development']);
+    } else {
+      grunt.task.run(['watch:production']);
+    }
+  });
 }

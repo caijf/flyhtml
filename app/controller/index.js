@@ -7,12 +7,6 @@ var site = require('./site');
 
 module.exports = function(app) {
 	var auth = user.requiresLogin;
-	//Index page
-	app.get('/', function(req, res) {
-		res.render('index', {
-			user: req.session.user || {}
-		});
-	});
 	
 	//login
 	app.post('/session', user.login);
