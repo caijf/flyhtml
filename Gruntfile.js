@@ -36,6 +36,14 @@ module.exports = function(grunt) {
         dest: 'asset/dest'
       }
     },
+    cssmin: {
+      compile: {
+        expand: true,
+        cwd: 'asset/dev',
+        src: ['**/*.css', '**/!*.min.css'],
+        dest: 'asset/dest'
+      }
+    },
     requirejs: {
       compile: {
         options: {
@@ -67,7 +75,7 @@ module.exports = function(grunt) {
   });
 
   //All tasks
-  grunt.registerTask('build', ['copy', 'requirejs']);
+  grunt.registerTask('build', ['copy', 'cssmin', 'requirejs']);
 
   grunt.registerTask('app', function(env) {
     var spawn = require('child_process').spawn;
